@@ -7,11 +7,9 @@ document.querySelector('#menu-btn').onclick = () => {
 
 // Toggle class active untuk search form
 const searchForm = document.querySelector('.search-form');
-const searchBox = document.querySelector('#search-box');
 
 document.querySelector('#search-button').onclick = (e) => {
   searchForm.classList.toggle('active');
-  searchBox.focus();
   e.preventDefault();
 };
 
@@ -28,3 +26,25 @@ document.addEventListener('click', function (e){
     searchForm.classList.remove('active');
   }
 });
+ 
+// Detail Box
+const itemDetail = document.querySelector('#item-detail');
+const detailButton = document.querySelector('.detail-button');
+
+detailButton.onclick = (e) => {
+    itemDetail.style.display = 'flex';
+    e.preventDefault();
+};
+
+// klik tombol close
+document.querySelector('.detail .close-icon').onclick = (e) => {
+  itemDetail.style.display = 'none';
+  e.preventDefault();
+};
+
+// klik di luar detail
+// window.onclick = (e) => {
+//   if (e.target === itemDetail) {
+//     itemDetail.style.display = 'none';
+//   }
+// };
